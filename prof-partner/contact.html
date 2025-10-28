@@ -22,6 +22,7 @@
         </nav>
     </div>
 </header>
+<a href="https://t.me/prof_partner" target="_blank" class="float-button">💬</a>
 
 <section class="cta-section">
     <h2>Давайте начнём сотрудничество!</h2>
@@ -97,40 +98,24 @@
         </div>
     </div>
 </section>
-
 <section class="cta-section">
     <h2>Остались вопросы?</h2>
     <p>Заполните форму ниже и мы свяжемся с вами в ближайшее время</p>
 
     <div class="form-center">
         <div class="form-container">
-            <form class="contact-form" action="https://formsubmit.co/prof_partne.r@mail.ru" method="POST">
-                <input type="hidden" name="_subject" value="Новая заявка с сайта">
-                <input type="hidden" name="_template" value="table">
-
+            <form class="contact-form">
                 <div class="form-row">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="tel" name="phone" placeholder="Телефон" required>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
                 </div>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Расскажите о вашей задаче..." rows="5" required></textarea>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Расскажите о вашей задаче..." rows="5" required></textarea>
                 <button type="submit">Отправить сообщение</button>
             </form>
         </div>
     </div>
 </section>
-
-<script>
-    // Скрипт добавляйте сюда
-    const form = document.querySelector('.contact-form');
-    if (form) {
-        form.addEventListener('submit', function() {
-            const button = this.querySelector('button[type="submit"]');
-            button.textContent = 'Отправляем...';
-            button.disabled = true;
-        });
-    }
-</script>
 
 <a href="https://t.me/prof_partner" target="_blank" class="float-button">💬</a>
 
