@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Prof-Partner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Prof-Partner Logo">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="about.html" class="nav-link active">О нас</a>
+            <a href="contact.html" class="nav-link">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<section class="cta-section">
+    <h2>Давайте начнём сотрудничество!</h2>
+    <p>Мы всегда рады новым клиентам и партнёрам. Наша команда готова помочь вам в подборе квалифицированных специалистов и решении кадровых вопросов любой сложности.</p>
+    <p>Свяжитесь с нами удобным для вас способом — мы ответим в течение рабочего дня и предложим оптимальное решение для вашего бизнеса.</p>
+
+    <div class="contact-main-info">
+        <div class="contact-highlight">
+            <div class="contact-phone">
+                <div class="contact-icon-big">📞</div>
+                <div>
+                    <h3>Телефон</h3>
+                    <p class="phone-number">+7 (965) 584-79-48</p>
+                    <p class="contact-note">Звоните для быстрой консультации</p>
+                </div>
+            </div>
+            <div class="contact-email">
+                <div class="contact-icon-big">✉️</div>
+                <div>
+                    <h3>Email</h3>
+                    <p class="email-address">Prof_partne.r@mail.ru</p>
+                    <p class="contact-note">Пишите для детального обсуждения</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instant-contact">
+            <h3>Мгновенная связь</h3>
+            <p>Напишите нам в мессенджеры для оперативного ответа:</p>
+            <div class="social-buttons-inline">
+                <a href="https://wa.me/79655847948" target="_blank" class="social-btn whatsapp">
+                    <span>💬</span>
+                    WhatsApp
+                </a>
+                <a href="https://t.me/prof_partner" target="_blank" class="social-btn telegram">
+                    <span>📱</span>
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Наш офис</h2>
+    <div class="office-info">
+        <div class="office-details">
+            <div class="office-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                    <h3>Адрес</h3>
+                    <p>Москва, 1-й Красногвардейский проезд, 22с1</p>
+                </div>
+            </div>
+            <div class="office-item">
+                <div class="contact-icon">🕒</div>
+                <div>
+                    <h3>Режим работы</h3>
+                    <p>Понедельник - Пятница: 9:00 – 18:00</p>
+                    <p>Суббота - Воскресенье: выходной</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe
+                    src="https://yandex.ru/map-widget/v1/?ll=37.536667%2C55.749722&z=16&pt=37.536667,55.749722,pm2rdm&text=Москва,+1-й+Красногвардейский+проезд,+22с1"
+                    width="100%"
+                    height="400"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Остались вопросы?</h2>
+    <p>Заполните форму ниже и мы свяжемся с вами в ближайшее время</p>
+
+    <div class="form-center">
+        <div class="form-container">
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                </div>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Расскажите о вашей задаче..." rows="5" required></textarea>
+                <button type="submit">Отправить сообщение</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<a href="https://t.me/prof_partner" target="_blank" class="float-button">💬</a>
+
+<script>
+    // Плавное появление секций
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+    });
+    sections.forEach(s => observer.observe(s));
+
+    // === Сообщение после отправки формы ===
+    const form = document.querySelector(".contact-form");
+
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // отменяем стандартную отправку
+            // очищаем поля
+            form.reset();
+
+            // создаём всплывающее сообщение
+            const msg = document.createElement("div");
+            msg.className = "form-message";
+            msg.textContent = "Спасибо! Мы свяжемся с вами в ближайшее время.";
+            document.body.appendChild(msg);
+
+            // через 3 секунды убираем сообщение
+            setTimeout(() => {
+                msg.classList.add("hide");
+                setTimeout(() => msg.remove(), 500);
+            }, 3000);
+        });
+    }
+</script>
+
+<footer>
+    © 2015 Prof-Partner. Все права защищены.
+</footer>
+</body>
+</html>
