@@ -404,7 +404,23 @@ section p {
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    color: bisque;
+    color: #ffffff;
+}
+.clients div {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 25px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.clients div:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .clients img {
@@ -1496,4 +1512,8 @@ header nav {
     .logo-link img {
         height: 45px;
     }
+}
+.form-loading {
+    opacity: 0.7;
+    pointer-events: none;
 }
