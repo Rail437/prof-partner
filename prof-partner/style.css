@@ -1507,13 +1507,94 @@ header nav {
     align-items: center;
 }
 
-/* Mobile responsive for logo */
-@media (max-width: 768px) {
-    .logo-link img {
-        height: 45px;
-    }
-}
 .form-loading {
     opacity: 0.7;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .contract-container {
+        padding: 0.5rem !important;
+    }
+
+    .contract-section, .form-section {
+        padding: 1.5rem !important;
+        margin: 0 0 1.5rem 0 !important;
+        border-radius: 8px !important;
+    }
+
+    .contract-title {
+        font-size: 1.4rem !important;
+        margin-bottom: 1.5rem !important;
+        padding-bottom: 1rem !important;
+    }
+
+    .contract-content {
+        padding: 1rem !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        margin: 0 !important;
+        border: 1px solid #ddd !important;
+    }
+
+    #pdfFrame {
+        height: 400px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .form-title {
+        font-size: 1.4rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .form-group input {
+        padding: 0.8rem !important;
+        font-size: 16px !important; /* Предотвращает зум на iOS */
+    }
+
+    .checkbox-group {
+        padding: 1rem !important;
+        flex-direction: column !important;
+    }
+
+    .checkbox-group input {
+        margin-bottom: 0.5rem !important;
+    }
+
+    button[type="submit"] {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .contract-section, .form-section {
+        padding: 1rem !important;
+    }
+
+    .contract-title {
+        font-size: 1.2rem !important;
+        line-height: 1.4;
+    }
+
+    #pdfFrame {
+        height: 350px !important;
+    }
+
+    #pdfLoader {
+        padding: 30px 0 !important;
+    }
+
+    #pdfLoader p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Исправление для iPhone Safari */
+@supports (-webkit-touch-callout: none) {
+    #pdfFrame {
+        height: 400px !important;
+    }
 }
